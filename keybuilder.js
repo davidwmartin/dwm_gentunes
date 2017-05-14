@@ -3,7 +3,7 @@
 var keybuilder = module.exports = {};
 
 // generic scale types. intervals gives the set of intervals to produce a given scale from a variable starting point (a note, assigned a numerical value)
-var scales = [
+keybuilder.scales = [
 	{
 		name: 'Major',
 		intervals: [2,2,1,2,2,2]
@@ -24,7 +24,7 @@ var scales = [
 
 
 // Note "names" -- most likely only used for display purposes
-var rootVals = [
+keybuilder.rootVals = [
 	'C',	
 	'C# / Db ',
 	'D',
@@ -42,7 +42,7 @@ var rootVals = [
 // builds array of possible keys (arrays of notes) for use in comparing against played / input notes
 keybuilder.getComparisonKeys = function(){
 	var comparisonKeys = [];
-	var keySeeds = scales;
+	var keySeeds = this.scales;
 
 	// use intervals in key definition to build an array of absolute pitches in a key
 	// TODO -- triple nested for loop is extra brutal...
@@ -64,7 +64,7 @@ keybuilder.getComparisonKeys = function(){
 				currKeyNotes.push(currNote);
 			}
 
-			currKey.name = rootVals[c] + " " + keySeeds[i].name;
+			currKey.name = this.rootVals[(c-1)] + " " + keySeeds[i].name;
 
 
 			//convert to absolute pitch array
@@ -76,7 +76,7 @@ keybuilder.getComparisonKeys = function(){
 		}
 	}
 
-	console.log(comparisonKeys);
+	// console.log(comparisonKeys);
 	return comparisonKeys;
 }
 
