@@ -8,3 +8,8 @@ This component is for analyzing what key you're in, and potentially defining cho
 ## Gotchas to watch for
 
 - be careful of counting arrays (0-indexed) vs some of my note naming schemes which are 1-indexed
+
+
+## General TODOs
+
+- common "definitions" file required by all the modules? includes chord, scales, rootvals, etc

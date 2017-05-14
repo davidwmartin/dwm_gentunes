@@ -1,4 +1,4 @@
-var keybuilder = require('./keybuilder');
+var keybuilder = require('./lib/keybuilder');
 
 var comparisonKeys = keybuilder.comparisonKeys;
 
@@ -30,7 +30,9 @@ for (var j=0; j < comparisonKeys.length; j++){
 	}
 }
 
-
+/******
+**** Step 3: Generate a Chord Progression
+******/
 
 
 ///////////// Utility functions and such 
@@ -44,7 +46,7 @@ function getScaleDegree(inner, outer){
 		// note -- increase we add 1 to indexOf since musical scale degrees aren't 0-indexed
 		scaleDegrees.push(outer.indexOf(inner[i]) + 1);
 	}
-	console.log(scaleDegrees);
+	return scaleDegrees;
 }
 
 // returns true if haystack array contains needle array, false otherwise
