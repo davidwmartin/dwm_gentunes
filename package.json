@@ -1,0 +1,17 @@
+{
+  "name": "genmusic",
+  "version": "0.0.1",
+  "description": "generative music experiment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "generative",
+    "music",
+    "javascript",
+    "node"
+  ],
+  "author": "david.w.martin@me.com",
+  "license": "UNLICENSED"
+}
